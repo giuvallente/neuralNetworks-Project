@@ -24,7 +24,7 @@ Usage from a notebook in the project root::
 
 The target (``laid_off``) is never used when fitting or transforming features.
 """
-
+# --8<-- [start:preprocessing]
 from typing import Iterator, NamedTuple, Optional, Sequence
 
 import numpy as np
@@ -177,3 +177,4 @@ def fit_transform_dev_test(X_dev, X_test, feature_columns: Sequence[str],
         for feature in names:
             print(f"  {feature}")
     return pipeline, dev, test
+# --8<-- [end:preprocessing]
