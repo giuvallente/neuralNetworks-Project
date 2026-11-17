@@ -141,7 +141,7 @@ print('SHA-256:', DATASET_SHA256)
 # --8<-- [end:load]
 
 # %%
-# ---8<-- [start:features]
+# --8<-- [start:features]
 NUMERIC = ['tenure_years', 'performance_rating', 'salary_k_usd']
 CATEGORICAL = ['department', 'cost_center_type', 'mgmt_layer', 'level']
 BINARY = ['team_wind_down', 'is_recent_hire', 'on_pip',
@@ -271,6 +271,7 @@ REFERENCES = {
         max_features='sqrt', class_weight='balanced', n_jobs=1, random_state=SEED,
     ),
 }
+
 
 def make_mlp(config, seed):
     params = {k: v for k, v in config.items() if k != 'balanced'}
@@ -705,7 +706,7 @@ display(department_errors.round(4))
 # ## 12. Conclusões calculadas a partir da execução
 
 # %%
-# ---8<-- [start:conclusions]
+# --8<-- [start:conclusions]
 base = test_results.loc[('baseline', chosen_mlp)]
 ext = test_results.loc[('extended', chosen_mlp)]
 logistic = test_results.loc[('extended', 'Logistica')]
